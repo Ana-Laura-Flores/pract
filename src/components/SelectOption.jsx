@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 
-export default function SelectOption({cats, cat, url, handleChangeId}) {
+export default function SelectOption({allCats, cat, url, handleChangeId}) {
    
 
   return (
@@ -12,7 +12,7 @@ export default function SelectOption({cats, cat, url, handleChangeId}) {
          <h1>Elige tu propio Gato</h1>
         <select name="" id="" onChange={handleChangeId}>
             <option value=" "></option>
-            {cats && cats.map(cat => <option  key={cat.id} value={cat.id}>{cat.name}</option> )}
+            {allCats.data && allCats.data.map(cat => <option  key={cat.id} value={cat.id}>{cat.name}</option> )}
         </select>
         <div style={{width: "500px", margin:"20px"}}>
             {url && <img style={{width: "300px", margin:"20px"}} src={url}></img>}
